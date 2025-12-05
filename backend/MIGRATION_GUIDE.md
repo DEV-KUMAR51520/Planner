@@ -195,22 +195,6 @@ VITE_API_URL=http://localhost:3000/api
 4. Test review submission
 5. Test query submission and replies
 
-## 🐛 Common Issues & Solutions
-
-### Issue 1: CORS Errors
-**Solution:** Make sure the Node.js server is running and CORS is configured correctly in `.env`:
-```
-CORS_ORIGIN=http://localhost:5173
-```
-
-### Issue 2: Database Connection Failed
-**Solution:** Check your database credentials in `.env`:
-```
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=
-DB_NAME=tour_planner
-```
 
 ### Issue 3: Email Not Sending
 **Solution:** Email configuration is optional. If not configured, emails will be logged to console instead. To enable:
