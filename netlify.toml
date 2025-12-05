@@ -18,8 +18,10 @@
 
 [functions]
   node_bundler = "esbuild"
-  external_node_modules = ["mongoose", "express", "bcryptjs", "jsonwebtoken", "nodemailer"]
-  included_files = ["backend/**", "PHPMailer/**"]
+  # Removed PHPMailer from external_node_modules
+  external_node_modules = ["mongoose", "express", "bcrypt", "nodemailer"] 
+  # Only include the backend folder
+  included_files = ["backend/**"]
 
 [[headers]]
   for = "/*"
