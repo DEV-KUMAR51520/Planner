@@ -1,9 +1,12 @@
 [build]
-command = "npm install && cd Frontend && npm install && npm run build"
+  command = "npm install && cd Frontend && npm install && npm run build"
   publish = "Frontend/dist"
   functions = "netlify/functions"
+
 [build.environment]
   NODE_VERSION = "18"
+  # CRITICAL FIX: Tell the secrets scanner to ignore documentation and example files that contain placeholder values
+  SECRETS_SCAN_OMIT_PATHS = "backend/MIGRATION_GUIDE.md backend/MONGODB_SETUP.md backend/README_NODEJS.md backend/.env.example deploy-with-env.sh deploy-netlify.sh"
 
 [[redirects]]
   from = "/api/*"
@@ -17,9 +20,7 @@ command = "npm install && cd Frontend && npm install && npm run build"
 
 [functions]
   node_bundler = "esbuild"
-  # Removed PHPMailer from external_node_modules
   external_node_modules = ["mongoose", "express", "bcrypt", "nodemailer"] 
-  # Only include the backend folder
   included_files = ["backend/**"]
 
 [[headers]]
