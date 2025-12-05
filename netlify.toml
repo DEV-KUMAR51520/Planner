@@ -1,8 +1,7 @@
 [build]
-  command = "cd Frontend && npm install && npm run build"
+command = "npm install && cd Frontend && npm install && npm run build"
   publish = "Frontend/dist"
   functions = "netlify/functions"
-
 [build.environment]
   NODE_VERSION = "18"
 
