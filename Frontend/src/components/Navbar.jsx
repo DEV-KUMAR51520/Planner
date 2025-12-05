@@ -4,7 +4,7 @@ import { FaMapMarkerAlt, FaUsers, FaHotel, FaLightbulb, FaCompass } from "react-
 import { motion } from "framer-motion";
 import { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Logo from "../assets/Logo.png";
+import Logo from "../assets/logo.png";
 import { UserContext } from "../App";
 import MeetOurTeam from "./MeetOurTeam";
 
