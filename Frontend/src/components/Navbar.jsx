@@ -8,6 +8,7 @@ import Logo from "../assets/logo.png";
 import { UserContext } from "../App";
 import MeetOurTeam from "./MeetOurTeam";
 
+
 export default function Navbar() {
   const { isLoggedIn, setIsLoggedIn } = useContext(UserContext);
   const [navbarState, setNavbarState] = useState(false);
