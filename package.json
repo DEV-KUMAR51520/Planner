@@ -1,12 +1,13 @@
 {
   "name": "travel-planner",
   "version": "1.0.0",
-  "description": "Travel Planner - Full Stack Application",
+  "description": "Travel Planner - Full Stack Application (Swadeshi for Atmanirbhar Bharat)",
   "type": "module",
   "scripts": {
     "build": "cd Frontend && npm install && npm run build",
     "dev:frontend": "cd Frontend && npm run dev",
-    "dev:backend": "cd backend && npm start"
+    "dev:backend": "cd backend && npm start",
+    "vercel-build": "npm run build"
   },
   "dependencies": {
     "serverless-http": "^3.2.0"
@@ -15,8 +16,10 @@
     "travel",
     "planner",
     "booking",
-    "tourism"
+    "tourism",
+    "vercel",
+    "ci-cd"
   ],
-  "author": "AryanCodeWizard",
+  "author": "Dev",
   "license": "MIT"
 }
