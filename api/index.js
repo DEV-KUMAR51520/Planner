@@ -44,17 +44,19 @@ const dbConnect = async () => {
   }
 };
 
-// Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/user', userRoutes);
-app.use('/api/booking', bookingRoutes);
-app.use('/api/admin', adminRoutes);
-app.use('/api/review', reviewRoutes);
-app.use('/api/query', queryRoutes);
-app.use('/api/destination', destinationRoutes);
+// --- START: Corrected Routes Section ---
+// Vercel rewrites /api/* to /* before handing it to this Express app, 
+// so the prefix /api must be removed here.
+app.use('/auth', authRoutes);
+app.use('/user', userRoutes);
+app.use('/booking', bookingRoutes);
+app.use('/admin', adminRoutes);
+app.use('/review', reviewRoutes);
+app.use('/query', queryRoutes);
+app.use('/destination', destinationRoutes);
 
-// Health check
-app.get('/api/health', (req, res) => {
+// Health check (Corrected from /api/health to /health)
+app.get('/health', (req, res) => {
   res.json({ 
     status: 'ok', 
     message: 'Travel Planner API is running on Netlify Functions',
@@ -62,22 +64,31 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Root endpoint
-app.get('/api', (req, res) => {
+// Root endpoint (Corrected from /api to /)
+app.get('/', (req, res) => {
   res.json({ 
     message: 'Travel Planner API',
     version: '1.0.0',
     endpoints: [
-      '/api/auth/*',
-      '/api/user/*',
-      '/api/booking/*',
-      '/api/admin/*',
-      '/api/review/*',
-      '/api/query/*',
-      '/api/destination/*'
+      '/auth/*',
+      '/user/*',
+      '/booking/*',
+      '/admin/*',
+      '/review/*',
+      '/query/*',
+      '/destination/*'
     ]
   });
 });
+
+// 404 handler for API endpoints
+app.use((req, res) => {
+  res.status(404).json({
+    status: 'error',
+    message: 'Endpoint not found'
+  });
+});
+// --- END: Corrected Routes Section ---
 
 // Ensure database connection before handling requests
 const handler = async (event, context) => {
