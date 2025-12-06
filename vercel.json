@@ -3,7 +3,8 @@
   
   "installCommand": "npm install && npm install --prefix Frontend",
   "buildCommand": "npm run build --prefix Frontend", 
-  "outputDirectory": "Frontend/dist",
+  
+  "outputDirectory": "Frontend/dist", 
 
   "builds": [
     {
@@ -17,12 +18,11 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "api/index.js"
+      "dest": "/api/index.js" 
     },
-
     {
       "src": "/(.*)",
-      "dest": "/Frontend/dist/index.html"
+      "dest": "/index.html" 
     }
   ]
 }
