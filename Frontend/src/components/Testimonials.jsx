@@ -38,26 +38,27 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 3000, // Smooth transition speed
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 0, // This makes it continuous
-    cssEase: "linear", // Ensures a smooth transition
-    pauseOnHover: false,
-    pauseOnFocus: false,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
+const TRANSITION_SPEED = 3000;
+
+const settings = {
+  dots: false,
+  infinite: true,
+  speed: TRANSITION_SPEED,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 0,
+  cssEase: "linear",
+  pauseOnHover: false,
+  pauseOnFocus: false,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: { slidesToShow: 1 },
+    },
+  ],
+};
+
 
   return (
     <section id="testimonials" className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white">
