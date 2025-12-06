@@ -232,7 +232,7 @@ const Profile = () => {
           if (response.ok && (data.success || data.message)) {
             setMessage("Profile photo updated successfully!");
             window.dispatchEvent(new Event('profileImageUpdated'));
-            setTimeout(() => setMessage(""), 3000);
+            setTimeout(() => setMessage(""), Number(3000));
           } else {
             throw new Error(data.message || "Failed to update profile photo");
           }
