@@ -5,8 +5,16 @@
 
 [build.environment]
   NODE_VERSION = "18"
-  # CRITICAL FIX: Tell the secrets scanner to ignore documentation and example files that contain placeholder values
-  SECRETS_SCAN_OMIT_PATHS = "backend/MIGRATION_GUIDE.md backend/MONGODB_SETUP.md backend/README_NODEJS.md backend/.env.example deploy-with-env.sh deploy-netlify.sh"
+
+  # Tell Netlify to ignore docs that include ENV examples
+  SECRETS_SCAN_OMIT_PATHS = """
+  backend/MIGRATION_GUIDE.md,
+  backend/MONGODB_SETUP.md,
+  backend/README_NODEJS.md,
+  backend/.env.example,
+  deploy-with-env.sh,
+  deploy-netlify.sh
+  """
 
 [[redirects]]
   from = "/api/*"
@@ -20,7 +28,7 @@
 
 [functions]
   node_bundler = "esbuild"
-  external_node_modules = ["mongoose", "express", "bcrypt", "nodemailer"] 
+  external_node_modules = ["mongoose", "express", "bcrypt", "nodemailer"]
   included_files = ["backend/**"]
 
 [[headers]]
