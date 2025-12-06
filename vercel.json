@@ -1,24 +1,19 @@
+
 {
   "version": 2,
-  
-  "installCommand": "npm install && npm install --prefix Frontend",
-  "buildCommand": "npm run build --prefix Frontend", 
-  
-  "outputDirectory": "Frontend/dist", 
-
   "builds": [
     {
-      "src": "api/index.js",
+      "src": "api/index.cjs", 
       "use": "@vercel/node",
       "config": {
-        "runtime": "nodejs20.x"
+        "runtime": "nodejs24.x" 
       }
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/index.js" 
+      "dest": "/api/index.cjs" 
     },
     {
       "src": "/(.*)",
