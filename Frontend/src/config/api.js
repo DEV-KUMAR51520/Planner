@@ -1,5 +1,5 @@
 // API Configuration for Node.js Backend
-const DEFAULT_API_URL = "/.netlify/functions/api";
+const DEFAULT_API_URL = "/api";
 
 // Safe: Avoids exposing or hardcoding actual URLs.
 // Netlify doesn't flag this because it's a fallback string.
