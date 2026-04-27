@@ -11,7 +11,7 @@ export default function PaymentPage() {
   return (
     <div className="payment-container" style={{ textAlign: "center", padding: "20px" }}>
       <h2>Scan to Pay</h2>
-      <QRCode value={paymentLink} size={200} />
+      <QRCodeCanvas value={paymentLink} size={200} />
       <p>Amount: ${amount}</p>
       <button onClick={() => alert("Payment initiated!")}>Proceed</button>
     </div>

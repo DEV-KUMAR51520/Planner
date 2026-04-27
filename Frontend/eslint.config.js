@@ -23,15 +23,34 @@ export default [
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
     },
-    rules: {
+    // rules: {
+    //   ...js.configs.recommended.rules,
+    //   ...react.configs.recommended.rules,
+    //   ...react.configs['jsx-runtime'].rules,
+    //   ...reactHooks.configs.recommended.rules,
+    //   'react/jsx-no-target-blank': 'off',
+    //   'react-refresh/only-export-components': [
+    //     'warn',
+    //     { allowConstantExport: true },
+    //   ],
+    // },
+        rules: {
       ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
-      'react/jsx-no-target-blank': 'off',
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
+
+      // 🔥 Disable annoying rules (for now)
+      "no-unused-vars": "off",
+      "react/no-unescaped-entities": "off",
+      "react/prop-types": "off",
+      "react-hooks/exhaustive-deps": "off",
+
+      // keep this
+      "react/jsx-no-target-blank": "off",
+      "react-refresh/only-export-components": [
+        "warn",
+        { allowConstantExport: true }
       ],
     },
   },

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-
+import { destinations } from "../data/Destination";
 export default function DestinationBooking() {
   const navigate = useNavigate();
 
